@@ -69,8 +69,8 @@ jobs:
     - name: Update luci-theme-argon
       run: cd openwrt/package/lean && rm -rf luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon
 
-#   - name: Add Passwall Repo
-#     run: cd openwrt && sed -i '3a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+    - name: Add Passwall Repo
+      run: cd openwrt && sed -i '3a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -90,8 +90,8 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-#    - name: SSH connection to Actions
-#      uses: P3TERX/debugger-action@master
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
 
     - name: Download package
       run: |
